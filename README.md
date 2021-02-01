@@ -1,4 +1,4 @@
-# Blockly_Section_Exercices
+# Blockly Section Exercises
 
 This is a Blockly course based on INGInious section.
 
