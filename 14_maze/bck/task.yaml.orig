@@ -1,20 +1,42 @@
 accessible: true
 author: Florian Thuin
-context: Même chose que le puzzle précédent, mais tu dois te rappeler comment tu as
-    utilisé le bloc «Si» et le bloc « Répéter » ensemble.
+context: Utilise le bloc "si chemin" encore une fois pour t'entraîner - ce n'est pas
+    très différent, mais attention aux plantes carnivores!
 environment: default
 evaluate: best
 groups: false
 input_random: '0'
 limits:
-    memory: '100'
     output: '2'
+    memory: '100'
     time: '30'
-name: Exercice 3
+name: Exercice 4
 network_grading: false
 order: 0
 problems:
     code:
+        options:
+            scrollbars: true
+            visual:
+                position: left
+            oneBasedIndex: true
+            media: /static/common/js/blockly/media/
+            toolboxPosition: start
+            css: true
+            trashcan: true
+            sounds: true
+            maxBlocks: Infinity
+        files:
+        - maze.js
+        - interpreter.js
+        type: blockly
+        name: ''
+        blocks_files:
+        - blocks.js
+        workspace: |-
+            <xml xmlns="http://www.w3.org/1999/xhtml">
+              <variables></variables>
+            </xml>
         toolbox: |-
             <xml xmlns="http://www.w3.org/1999/xhtml">
               <variables></variables>
@@ -39,28 +61,6 @@ problems:
               </block>
             </category>
             </xml>
-        options:
-            scrollbars: true
-            visual:
-                position: left
-            oneBasedIndex: true
-            media: /static/common/js/blockly/media/
-            toolboxPosition: start
-            css: true
-            trashcan: true
-            sounds: true
-            maxBlocks: Infinity
-        files:
-        - maze.js
-        - interpreter.js
-        type: blockly
-        name: ''
-        blocks_files:
-        - blocks.js
-        workspace: |-
-            <xml xmlns="http://www.w3.org/1999/xhtml">
-              <variables></variables>
-            </xml>
         header: ''
 stored_submissions: 0
 submission_limit:
@@ -71,8 +71,8 @@ tags:
         type: 0
         visible: true
         name: 'Boucle '
-        id: '1'
         description: ''
+        id: '1'
     '1':
         id: '2'
         description: ''
@@ -81,26 +81,20 @@ tags:
         name: Condition
     '2':
         description: ''
-        name: Challenge
+        name: Lecon 8
+        visible: true
         type: 2
-        visible: false
         id: ''
     '3':
-        name: Facile
         description: ''
+        name: Facile
         type: 2
         visible: false
         id: ''
     '4':
         type: 2
         description: ''
-        name: Lecon 8
-        visible: true
-        id: ''
-    '5':
-        description: ''
         name: Normal
-        type: 2
         visible: false
         id: ''
 weight: 1.0

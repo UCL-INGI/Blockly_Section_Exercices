@@ -2,7 +2,10 @@ accessible: true
 author: Florian Thuin
 categories: []
 contact_url: ''
-context: Voici un autre exercice avec le bloc « Si/Sinon », sans aide cette fois !
+context: |-
+    Peux tu rajouter juste 3 blocs pour aider le zombie à résoudre un labyrinthe plus complexe ?
+
+    Si tu le fais bien, il peut parcourir n'importe quel chemin sinueux peu importe la longueur!
 environment_id: default
 environment_parameters:
     limits:
@@ -41,6 +44,18 @@ problems:
         workspace: |-
             <xml xmlns="http://www.w3.org/1999/xhtml">
               <variables></variables>
+              <block type="maze_forever">
+                <statement name="DO">
+                  <block type="maze_ifElse">
+                    <field name="DIR">isPathForward</field>
+                    <statement name="ELSE">
+                      <block type="maze_ifElse">
+                        <field name="DIR">isPathRight</field>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+              </block>
             </xml>
         header: ''
         name: ''
