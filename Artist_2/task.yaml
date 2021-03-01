@@ -3,8 +3,7 @@ author: Celine Deknop
 categories: []
 contact_url: ''
 context: |-
-    Ce parterre de fleurs rectangulaire a un périmètre de 600 pixels. Le côté le plus long a une longueur de 200 pixels. Dessine le rectangle.
-    Remarque : Tu ne dois pas repasser sur les lignes des fleurs, uniquement dessiner le rectangle
+    Ce rectangle a un périmètre de 600 pixels. Le côté le plus long a une longueur de 200 pixels. Dessine le rectangle.
 environment_id: default
 environment_parameters:
     limits:
