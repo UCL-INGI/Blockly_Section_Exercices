@@ -47,13 +47,21 @@ problems:
                   <block type="colour_random"></block>
                 </value>
                 <next>
-                  <block type="turtle_move_internal">
+                  <block type="turtle_move">
                     <field name="DIR">moveForward</field>
-                    <field name="VALUE">100</field>
+                    <value name="VALUE">
+                      <block type="math_number">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
                     <next>
-                      <block type="turtle_move_internal">
+                      <block type="turtle_move">
                         <field name="DIR">moveBackward</field>
-                        <field name="VALUE">100</field>
+                        <value name="VALUE">
+                          <block type="math_number">
+                            <field name="NUM">100</field>
+                          </block>
+                        </value>
                         <next>
                           <block type="turtle_turn_internal">
                             <field name="DIR">turnRight</field>
