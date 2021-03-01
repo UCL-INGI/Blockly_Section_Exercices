@@ -1,7 +1,7 @@
 accessible: true
-author: Florian Thuin
+author: INGI
 categories: []
-contact_url: ''
+contact_url: https://github.com/UCL-INGI/Blockly_Section_Exercices/issues
 context: |-
     .. image:: $common/maze_media/small_static_avatar.png
         :height: 40px
@@ -10,9 +10,9 @@ context: |-
 environment_id: default
 environment_parameters:
     limits:
+        memory: '100'
         hard_time: ''
         time: '30'
-        memory: '100'
     run_cmd: ''
 environment_type: docker
 evaluate: best
@@ -24,41 +24,40 @@ network_grading: false
 order: 4
 problems:
     code:
-        options:
-            zoom:
-                maxScale: 3.0
-                scaleSpeed: 1.2
-                minScale: 0.3
-                controls: true
-                startScale: 1.0
-                wheel: false
-            visual:
-                position: left
-            toolboxPosition: start
-            grid:
-                length: 3
-                colour: '#ccc'
-                spacing: 20
-                snap: true
-            media: /plugins/blockly/static/blockly/media/
-            oneBasedIndex: true
-            speed: '60'
-            scrollbars: true
-            css: true
-            sounds: true
-            maxBlocks: '6'
-            trashcan: true
-        type: blockly
-        files:
-        - ../$common/maze.js
-        - ../$common/maze_interpreter.js
         blocks_files:
         - blocks.js
+        options:
+            zoom:
+                minScale: 0.3
+                controls: true
+                scaleSpeed: 1.2
+                maxScale: 3.0
+                startScale: 1.0
+                wheel: false
+            css: true
+            grid:
+                colour: '#ccc'
+                snap: true
+                spacing: 20
+                length: 3
+            visual:
+                position: left
+            oneBasedIndex: true
+            scrollbars: true
+            trashcan: true
+            sounds: true
+            maxBlocks: '6'
+            media: /plugins/blockly/static/blockly/media/
+            toolboxPosition: start
+            speed: '60'
         workspace: |-
             <xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks"
             style="display:none"></xml>
-        header: ''
         name: ''
+        files:
+        - ../$common/maze.js
+        - ../$common/maze_interpreter.js
+        type: blockly
         toolbox: |-
             <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
                 <block type="maze_moveForward"></block>
@@ -66,6 +65,7 @@ problems:
               <block type="maze_turn"><field name="DIR">turnRight</field></block>
               <block type="controls_repeat"><title name="TIMES">???</title></block>
             </xml>
+        header: ''
 stored_submissions: 0
 submission_limit:
     amount: -1
