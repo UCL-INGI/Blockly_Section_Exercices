@@ -24,6 +24,8 @@
 "use strict";
 
 var task_directory_path = window.location.pathname + "/";
+var START_BLOCK = false;
+var list_child_blocks_start = [];
 window.Maze = {};
 
 //File to modify to change the maze configuration
@@ -519,6 +521,9 @@ Maze.reset = function(first) {
  */
 Maze.animate = function() {
     var action = Maze.log.shift();
+    if (START_BLOCK && typeof action !== 'undefined' && !list_child_blocks_start.includes(action[1].slice(9))){
+        return;
+    }
     if (!action) {
         Blockly.getMainWorkspace().highlightBlock(null);
         return;
@@ -984,8 +989,25 @@ Maze.notDone = function() {
     return Maze.pegmanX != Maze.finish_.x || Maze.pegmanY != Maze.finish_.y;
 };
 
+Maze.start_block = function(id) {
+    START_BLOCK = true;
+    update_children_list_start(id);
+    return true;
+};
+
 if (document.getElementById('blocklySvgZone') != null) {
     window.addEventListener('load', Maze.init);
 } else {
     console.warn('Cannot find blocklySvgZone element.');
+}
+
+
+function update_children_list_start(block_id){
+    var current_block = Blockly.getMainWorkspace().getBlockById(block_id);
+    if(current_block.childBlocks_.length == 0 ){
+        return;
+    }
+    var next_block_id = current_block.childBlocks_[0]["id"];
+    list_child_blocks_start.push(next_block_id);
+    update_children_list_start(next_block_id);
 }

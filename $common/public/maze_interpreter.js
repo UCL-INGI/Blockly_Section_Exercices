@@ -45,6 +45,11 @@ var initInterpreterApi = function(interpreter, scope) {
     };
     interpreter.setProperty(scope, 'notDone',
         interpreter.createNativeFunction(wrapper));
+    wrapper = function(id) {
+      return interpreter.createPrimitive(Maze.start_block(id.toString()));
+    };
+    interpreter.setProperty(scope, 'start_block',
+        interpreter.createNativeFunction(wrapper));
 
     Maze.log = [];
     Maze.reset(false);
