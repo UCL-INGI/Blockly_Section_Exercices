@@ -1,18 +1,18 @@
 accessible: true
-author: INGI
+author: Florian Thuin
 categories: []
-contact_url: https://github.com/UCL-INGI/Blockly_Section_Exercices/issues
+contact_url: ''
 context: |-
     .. image:: $common/maze_media/small_static_avatar.png
         :height: 40px
 
-    **Peux-tu rejoindre le compagnon en utilisant uniquement quatre blocs ?**
+    **Peux-tu rejoindre le tournesol en utilisant uniquement quatre blocs ?**
 environment_id: default
 environment_parameters:
     limits:
-        memory: '100'
-        hard_time: ''
         time: '30'
+        hard_time: ''
+        memory: '100'
     run_cmd: ''
 environment_type: docker
 evaluate: best
@@ -24,39 +24,44 @@ network_grading: false
 order: 9
 problems:
     code:
-        blocks_files:
-        - blocks.js
+        type: blockly
+        name: ''
+        header: |-
+            .. image:: $common/maze_media/small_static_avatar.png
+                :height: 40px
+
+            **Peux-tu rejoindre le tournesol en utilisant uniquement quatre blocs ?**
         options:
-            zoom:
-                minScale: 0.3
-                controls: true
-                scaleSpeed: 1.2
-                maxScale: 3.0
-                startScale: 1.0
-                wheel: false
-            css: true
-            grid:
-                colour: '#ccc'
-                snap: true
-                spacing: 20
-                length: 3
             visual:
                 position: left
+            maxBlocks: '4'
+            speed: '60'
+            trashcan: true
+            toolboxPosition: start
+            media: /plugins/blockly/static/blockly/media/
+            css: true
+            grid:
+                spacing: 20
+                length: 3
+                colour: '#ccc'
+                snap: true
+            zoom:
+                controls: true
+                startScale: 1.0
+                maxScale: 3.0
+                minScale: 0.3
+                scaleSpeed: 1.2
+                wheel: false
             oneBasedIndex: true
             scrollbars: true
-            trashcan: true
             sounds: true
-            maxBlocks: '4'
-            media: /plugins/blockly/static/blockly/media/
-            toolboxPosition: start
-            speed: '60'
-        workspace: <xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks"
-            style="display:none"></xml>
-        name: ''
+            use_start_block: 'on'
         files:
         - ../$common/maze.js
         - ../$common/maze_interpreter.js
-        type: blockly
+        blocks_files:
+        - blocks.js
+        - ../$common/common_blocks.js
         toolbox: |-
             <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
                 <block type="maze_moveForward"></block>
@@ -64,11 +69,8 @@ problems:
               <block type="maze_turn"><field name="DIR">turnRight</field></block>
               <block type="maze_forever"></block>
             </xml>
-        header: |-
-            .. image:: $common/maze_media/small_static_avatar.png
-                :height: 40px
-
-            **Peux-tu rejoindre le tournesol en utilisant uniquement quatre blocs ?**
+        workspace: <xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks"
+            style="display:none"></xml>
 stored_submissions: 0
 submission_limit:
     amount: -1

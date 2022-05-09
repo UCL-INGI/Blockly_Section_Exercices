@@ -1,18 +1,18 @@
 accessible: true
-author: INGI
+author: Florian Thuin
 categories: []
-contact_url: https://github.com/UCL-INGI/Blockly_Section_Exercices/issues
+contact_url: ''
 context: |-
     .. image:: $common/maze_media/small_static_avatar.png
         :height: 40px
 
-    **Peux-tu aller jusqu'au compagnon en utilisant uniquement six blocs?**
+    **Peux-tu aller au tournesol en utilisant uniquement six blocs?**
 environment_id: default
 environment_parameters:
     limits:
-        memory: '100'
         hard_time: ''
         time: '30'
+        memory: '100'
     run_cmd: ''
 environment_type: docker
 evaluate: best
@@ -24,39 +24,45 @@ network_grading: false
 order: 10
 problems:
     code:
-        blocks_files:
-        - blocks.js
         options:
             zoom:
+                maxScale: 3.0
+                scaleSpeed: 1.2
                 minScale: 0.3
                 controls: true
-                scaleSpeed: 1.2
-                maxScale: 3.0
                 startScale: 1.0
                 wheel: false
-            css: true
-            grid:
-                colour: '#ccc'
-                snap: true
-                spacing: 20
-                length: 3
             visual:
                 position: left
+            toolboxPosition: start
+            grid:
+                length: 3
+                colour: '#ccc'
+                spacing: 20
+                snap: true
+            media: /plugins/blockly/static/blockly/media/
             oneBasedIndex: true
+            speed: '60'
             scrollbars: true
-            trashcan: true
+            css: true
             sounds: true
             maxBlocks: '6'
-            media: /plugins/blockly/static/blockly/media/
-            toolboxPosition: start
-            speed: '60'
-        workspace: <xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks"
-            style="display:none"></xml>
-        name: ''
+            trashcan: true
+        type: blockly
         files:
         - ../$common/maze.js
         - ../$common/maze_interpreter.js
-        type: blockly
+        blocks_files:
+        - blocks.js
+        - ../$common/common_blocks.js
+        workspace: <xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks"
+            style="display:none"></xml>
+        header: |-
+            .. image:: $common/maze_media/small_static_avatar.png
+                :height: 40px
+
+            **Peux-tu aller au tournesol en utilisant uniquement six blocs?**
+        name: ''
         toolbox: |-
             <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
                 <block type="maze_moveForward"></block>
@@ -64,11 +70,6 @@ problems:
               <block type="maze_turn"><field name="DIR">turnRight</field></block>
               <block type="maze_forever"></block>
             </xml>
-        header: |-
-            .. image:: $common/maze_media/small_static_avatar.png
-                :height: 40px
-
-            **Peux-tu aller au tournesol en utilisant uniquement six blocs?**
 stored_submissions: 0
 submission_limit:
     amount: -1

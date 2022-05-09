@@ -2,8 +2,8 @@ accessible: true
 author: Florian Thuin
 categories: []
 contact_url: ''
-context: Le blocs « Si/Sinon » vérifie une condition et puis fait une chose OU une
-    autre. Pour amener le personnage au tournesol, essaie d'utiliser ce nouveau bloc.
+context: Utilise le bloc "si chemin" encore une fois pour t'entraîner - ce n'est pas
+    très différent, mais attention aux plantes carnivores!
 environment_id: default
 environment_parameters:
     limits:
@@ -39,16 +39,10 @@ problems:
         - ../$common/maze_interpreter.js
         blocks_files:
         - blocks.js
+        - ../$common/common_blocks.js
         workspace: |-
             <xml xmlns="http://www.w3.org/1999/xhtml">
               <variables></variables>
-              <block type="maze_forever">
-                <statement name="DO">
-                  <block type="maze_ifElse">
-                    <field name="DIR">isPathForward</field>
-                  </block>
-                </statement>
-              </block>
             </xml>
         header: ''
         name: ''
@@ -71,7 +65,7 @@ problems:
             </category>
               <category name="condition" colour="225">
               <variables></variables>
-              <block type="maze_ifElse">
+              <block type="maze_if">
                 <field name="DIR">isPathForward</field>
               </block>
             </category>
